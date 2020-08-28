@@ -28,10 +28,12 @@ class ResponsiveDialog extends StatefulWidget
     this.cancelPressed,
     this.confirmText,
     this.cancelText,
+    double titleTextSize
   })  : title = title ?? "Title Here",
         child = child ?? Text("Content Here"),
         maxLongSide = maxLongSide ?? 600,
-        maxShortSide = maxShortSide ?? 400;
+        maxShortSide = maxShortSide ?? 400,
+        titleTextSize = titleTextSize;
 
   // Variables
   final BuildContext context;
@@ -56,6 +58,7 @@ class ResponsiveDialog extends StatefulWidget
   final String confirmText;
   @override
   final String cancelText;
+  final double titleTextSize;
 
   // Events
   final VoidCallback cancelPressed;
@@ -84,7 +87,7 @@ class _ResponsiveDialogState extends State<ResponsiveDialog> {
         child: Text(
           widget.title,
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: widget.titleTextSize,
             color: _headerTextColor,
           ),
         ),

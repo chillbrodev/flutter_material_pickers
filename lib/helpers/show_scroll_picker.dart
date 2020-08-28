@@ -22,6 +22,7 @@ void showMaterialScrollPicker({
   ValueChanged<String> onChanged,
   VoidCallback onConfirmed,
   VoidCallback onCancelled,
+  double titleTextSize
 }) {
   showDialog<String>(
     context: context,
@@ -39,6 +40,7 @@ void showMaterialScrollPicker({
         maxLongSide: maxLongSide,
         maxShortSide: maxLongSide,
         showDivider: showDivider,
+        titleTextSize: titleTextSize,
       );
     },
   ).then((selection) {
